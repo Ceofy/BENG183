@@ -27,9 +27,8 @@
 #### 1.3.2.1. Intuition<a name="1321"></a>
 #### 1.3.2.2. Algorithm<a name="1322"></a>
     
-&nbsp;1. Dog  
-&nbsp;&nbsp;&nbsp;German Shepherd: The German Shepherd Dog (GSD, also known as an Alsatian), (German: Deutscher Schäferhund) is a breed of large-sized dog that originated in Germany.  
-&nbsp;&nbsp;&nbsp;1.2. Belgian Shepherd  
+&nbsp;1. [Introduction](#11)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2. Belgian Shepherd  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.1. Malinois  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.2. Groenendael  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.3. Tervuren  
