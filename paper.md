@@ -1,18 +1,4 @@
 # 1. Hi-C
-1. [Introduction](#11)
-2. [Protocol](#12)<br>
-    2.1. [Cross-linking](#121)<br>
-    2.2. [Digestion](#122)<br>
-    2.3. [Selection](#123)<br>
-    2.4. [Sequencing](#123)<br>
-3. [Analysis](#13)<br>
-    3.1. [Contact matrix](#131)<br>
-      . . 3.1.1. [Concept](#1311)<br>
-        3.1.2. [Creation](#1312)<br>
-    3.2. [TAD Calling](#132)<br>
-        3.2.1 [Intuition](#1321)<br>
-        3.2.2 [Algorithm](#1322)
-        
 &nbsp;1. [Introduction](#11)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. [Protocol](#12)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1. [Cross-linking](#121)  
@@ -21,8 +7,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.4. [Sequencing](#123)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Analysis](#13)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1. [Contact matrix](#131)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Concept](#1311)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creation](#1312)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.1. [Concept](#1311)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.2. [Creation](#1312)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2. [TAD Calling](#132)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.1 [Intuition](#1321)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.2 [Algorithm](#1322)  
