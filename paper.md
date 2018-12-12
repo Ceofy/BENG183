@@ -53,7 +53,7 @@ In order to create a contact matrix, the chromosome (or genome) must be divided 
 Once bins have been established, the number of interactions between each pair of bins must be counted. These counts are then plotted onto the graph as a heat map, which higher numbers of interactions represented as darker colors, and lower numbers of interactions represented as lighter colors.
 
 ### 1.3.2. TAD Calling<a name="132"></a>
-#### Intuition<a name="1321"></a>
+#### 1.3.2.1 Intuition<a name="1321"></a>
 
 Using the contact matrix, the boundaries between TADs can be identified (ie. the TADs can be called). Since TADs are contiguous regions of the DNA which interact most strongly with themselves, upstream sections of the TAD will have more downstream contacts, and downstream sections of the TAD will have more upstream contacts. A TAD boundary can be called at the point along the chromosome where bins switch from having mostly upstream contacts to mostly downstream contacts.
 
@@ -61,7 +61,7 @@ The number of upstream or downstream contacts a bin has can be quantified using 
 
 In the above equation, note that the second factor the the DI can never be negative, so the sign of the DI depends on the first factor. If the bin has more upstream contacts than downstream contacts (ie. A > B), then the DI will be positive. If the bin has more downstream contacts than upstream contacts, then the DI will be negative.
 
-#### Algorithm<a name="1322"></a>
+#### 1.3.2.2 Algorithm<a name="1322"></a>
     
 In order to model the TAD calling problem, a hidden Markov model is used. A hidden Markov model is a consists hidden states which transition into other hidden states, and which give rise to observable outputs. The probability of a hidden state transitioning into another hidden state is known as the transition probability. The probability of a hidden state producing a certain observable output is known as the emission probability.
 
