@@ -1,11 +1,11 @@
 # 1. Hi-C
 &nbsp;1. [Introduction](#11)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. [Protocol](#12)  
+&nbsp;2. [Protocol](#12)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1. [Cross-linking](#121)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2. [Digestion](#122)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3. [Selection](#123)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.4. [Sequencing](#123)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Analysis](#13)  
+&nbsp;3. [Analysis](#13)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1. [Contact matrix](#131)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.1. [Concept](#1311)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.2. [Creation](#1312)  
