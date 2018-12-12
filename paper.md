@@ -20,156 +20,51 @@ Hi-C is a chromosome conformation capture (3C) technique used to quantify intera
 One application of the Hi-C technique is to identify Topologically Associated Domains (TADs) within the chromosome. TADs are regions of the chromosome that interact with themselves more frequently than they interact with other regions of the chromosome. They are a general property of genomes, and contribute to proper gene regulation and other nuclear functions. TADs typically consist of 105 to 106 contiguous base pairs, and are separated from each other by boundaries which prevent interaction between TADs. Since Hi-C quantifies chromosome interactions, it is a very useful tool for identifying these highly self-interacting regions.
 
 ## 1.2. Protocol<a name="12"></a>
+
+
+
 ### 1.2.1. Cross-linking<a name="121"></a>
+
+Cross-linking is a process used to create covalent links between interacting sections of chromatin. Chromatin interactions are mediated by DNA-binding proteins, and treating the cell with formaldehyde creates covalent bonds between chromatin and DNA-binding proteins, and between DNA-binding proteins and other proteins.
+
 ### 1.2.2. Digestion<a name="122"></a>
+
+Digestion of the genome is a process which is used to produce short fragments of cross-linked chromatin. After cross-linking, the cell is lysed and homogenized. Then DNA is digested into fragments through the use of the HindIII restriction enzyme, which leaves 5’ sticky ends on each fragment of DNA. This process results in relatively short interacting chromatin fragments that are cross-linked together via DNA-binding proteins.
+
 ### 1.2.3. Selection<a name="123"></a>
+
+In order to later isolate the fragments of interacting chromatin from the rest of the cell, the ends of each fragment of DNA are filled in with nucleotides, including a biotinylated nucleotide. The blunt ends of the DNA are then ligated under extremely dilute conditions which favor ligation between physically close, cross-linked fragments. The digested chromatin mixture is then purified through the use of proteinase and RNase. Exonucleases are used to remove biotinylated nucleotides from unligated (ie. unlinked) DNA fragments. Fragments still containing biotin are then pulled down and purified using streptavidin beads. 
+
 ### 1.2.4. Sequencing<a name="124"></a>
+
+After the DNA is purified, it must be sequenced and analyzed in order to identify interacting sections of the genome. First, the purified DNA is sequenced using Illumina paired end sequencing. Then, each end of the read is aligned to the genome independently, revealing a pair of genome loci which interact with each other.
+
 ## 1.3. Analysis<a name="13"></a>
-### 1.3.1. Contact matrix<a name="131"></a>
+### 1.3.1. Contact matrix<a name="131"></a> 
+
 #### 1.3.1.1. Concept<a name="1311"></a>
+
+A contact matrix is a heat map used to visualize interactions between different sections of the chromosome (or between different sections of the whole genome). The x- and y-axes represent loci on the chromosome in linear order. A dark colored square in the contact matrix represents a pair of loci which have many interactions between them, and a light colored square represents a pair of loci which have few interactions between them.
+
 #### 1.3.1.2. Creation<a name="1312"></a>
+
+In order to create a contact matrix, the chromosome (or genome) must be divided into non-overlapping bins of equal size. A bin is a section of contiguous DNA for which Hi-C data will be grouped together. The bins may contain different numbers of base pairs based on the resolution necessary for the desired analysis.
+
+Once bins have been established, the number of interactions between each pair of bins must be counted. These counts are then plotted onto the graph as a heat map, which higher numbers of interactions represented as darker colors, and lower numbers of interactions represented as lighter colors.
+
 ### 1.3.2. TAD Calling<a name="132"></a>
 #### 1.3.2.1. Intuition<a name="1321"></a>
+
+Using the contact matrix, the boundaries between TADs can be identified (ie. the TADs can be called). Since TADs are contiguous regions of the DNA which interact most strongly with themselves, upstream sections of the TAD will have more downstream contacts, and downstream sections of the TAD will have more upstream contacts. A TAD boundary can be called at the point along the chromosome where bins switch from having mostly upstream contacts to mostly downstream contacts.
+
+The number of upstream or downstream contacts a bin has can be quantified using the Directionality Index (DI). The DI is calculated as follows:
+
+In the above equation, note that the second factor the the DI can never be negative, so the sign of the DI depends on the first factor. If the bin has more upstream contacts than downstream contacts (ie. A > B), then the DI will be positive. If the bin has more downstream contacts than upstream contacts, then the DI will be negative.
+
 #### 1.3.2.2. Algorithm<a name="1322"></a>
     
+In order to model the TAD calling problem, a hidden Markov model is used. A hidden Markov model is a consists hidden states which transition into other hidden states, and which give rise to observable outputs. The probability of a hidden state transitioning into another hidden state is known as the transition probability. The probability of a hidden state producing a certain observable output is known as the emission probability.
 
+In the TAD calling model, the observable outputs represent the DIs observed from the contact matrix. The hidden states represent the true DIs underlying the experimental observations, which are unknown. In order to infer the true DIs, the transition and emission probabilities must first be discovered using an expectation maximization algorithm. Then, the true DIs can be inferred using the forward-backward algorithm.
 
-## 2.3.1 Introduction<a name="231"></a>
-
-The foundamental object of 3C(Chromosome Conformation Capture) techniques and 3C-derived methods is to understand the physical wiring diagram of the genome by identifying the physical interaction between chromosomes. 
-
-To capture the interaction (crosslink between strings), there are few steps in general:
-- Take a snapshot of the flowing cells - **Crosslink** with fixative agent (formaldehyde)
-- Zoom in on crosslinked part and exclude untangled parts - **Digested** with a restriction enzyme
-- Analyze the components come from the same chromatin - **Reverse crosslink** and **sequence**
-- Finish the jigsaw puzzle and get the results - **Align** the reads and **summarize** the contacts
-
-> Based on these general ideas, then we'll dive deeper by walking through two of the most popular  techniques and then briefly introduce some other methods. 
-
-## 2.3.2 Overivew of 3C methods<a name="232"></a>
-
-![](/assets/1-s2.0-S1360138518300827-gr1b2_lrg.jpg)
-[Figure1](https://doi.org/10.1016/j.tplants.2018.03.014). Schematic Representation of Chromosome Conformation Capture (3C) and 3C-Derived Methods. These methods help to elucidate nuclear organization by detecting physical interactions between genetic elements located throughout the genome. Abbreviations: IP, immunoprecipitation; RE, restriction enzyme. **Figure by Sotelo-Silveira, Mariana, et al. Trends in Plant Science (2018).**
-
-To better understand the difference between these methods, I'd like to distingush them between the following couple of aspects:
-
-#### 1) Specificity - What does _one, all, many_ mean<a name="2321"></a>
-‘1’, ‘Many’ and ‘All’ indicate how many loci are interrogated in a given experiment. For example, ‘1 versus All’ indicates that the experiment probes the interaction profile between 1 locus and all other potential loci in the genome. ‘All versus All’ means that one can detect the interaction profiles of all loci, genome-wide, and their interactions with all other genomic loci [1].
-
-These kind of specificity is determined by the primer when people use **specific primers** before PCR. 
-
-#### 2) Through-put and resolution<a name="2322"></a>
-Hi-C techniques has the highest through-put (billion reads per sample) but suffering of a relative low resolution of 0.1-1Mb. However, the other methods usually have a higher resolution  around 1kb. For more details one can refer to table2 in [2].
-
-## 2.3.3 Hi-C<a name="233"></a>
-Hi-C is the highest through-put version of 3C-derived technologies. Due to the decreasing cost of 2nd generation sequencing, hi-c is widely used.
-
-The principle of Hi-C can be illustrated as:
-![](/assets/hic.gif)
-
-
-##### Hi-C critical steps [8] 
-- Fixation: keep DNA conformed
-- Digestion: enzyme frequency and penetratin
-- Fill-in: biotin for junction enrichment
-- Ligation: freeze interactions in sequence
-- Biotin removal: junctions only
-- Fragment size: small fragments sequence better
-- Adapter ligation: paired-end and indexing
-- PCR: create enough material for flow cell
-
-##### Hi-C derived techniques 
-- Hi-C original: [Lieberman-Aiden et al., Science 2010](doi: 10.1126/science.1181369)
-- Hi-C 1.0: [Belton-JM et al., Methods 2012](doi: 10.1016/j.ymeth.2012.05.001)
-- In situ Hi-C: [Rao et al., Cell 2014](doi: 10.1016/j.cell.2014.11.021)
-- Single cell Hi-C: [Nagano et al., Genome Biology 2015](https://doi.org/10.1186/s13059-015-0753-7)
-- DNase Hi-C [Ma, Wenxiu, Methods et al](https://www.ncbi.nlm.nih.gov/pubmed/25437436)
-- Hi-C 2.0: [Belaghzal et al., Methods 2017](https://www.ncbi.nlm.nih.gov/pubmed/28435001)
-- DLO-Hi-C: [Lin et al., Nature Genetics 2018](https://doi.org/10.1038/s41588-018-0111-2)
-- Hi-C improving: [Golloshi et al., Methods 2018](https://www.biorxiv.org/content/biorxiv/early/2018/02/13/264515.full.pdf)
-- Arima 1-day Hi-C: [Ghurye et al., BioRxiv 2018](https://www.biorxiv.org/content/early/2018/02/07/261149)
-
-## 2.3.4 ChIA-PET<a name="234"></a> 
-ChIA-PET is another method that combines ChIP and pair-end sequencing to analysis the chromtin interaction. It allows for targeted binding factors such as: estrogen receptor alpha, CTCF-mediated loops, RNA polymerase II, and a combination of key architectural factors. on the one hand, it has the benefit of achieving a higher resolution compared to Hi-C, as only ligation products involving the immunoprecipitated molecule are sequenced, on the other hand, ChIA-PET has systematic biases due to ChIP process:
-- Only one type of binding factor selected
-- Different antibodies
-- ChIP conditions
-
-
-## 2.3.5 Selected methods comparison<a name="235"></a> 
-<table>
- <tbody>
-    <tr>
-        <th>Method</td>
-        <th>Targets</td>
-        <th>Resolution</td>
-        <th>Notes</td>
-    </tr>
-    <tr>
-        <td>3C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0535">[3]</a></td>
-        <td>one-vs-one</td>
-        <td>~1–10 kb<br></td>
-        <td><ul><li>Sequence of bait locus must be known</li><li>Easy data analysis</li><li>Low throughput</li></ul></td>
-    </tr>
-    <tr>
-    <td>4C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0545">[4]</a></td>
-    <td>one-vs-all</td>
-    <td>~2 kb</td>
-    <td><ul><li>Sequence of bait locus must be known</li><li>Detects novel contacts</li><li>Long-range contacts</li></ul></td>
-    </tr>
-    <tr>
-    <td>5C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0550">[5]</a></td>
-    <td>many-vs-many</td>
-    <td>~1 kb</td>
-    <td><ul><li>High dynamic range</li><li>Complete contact map of a locus</li><li>3C with ligation-mediated amplification (LMA) of a ‘carbon copy’ library of oligos designed across restriction fragment junctions of interest
-3C</li></ul></td>
-    </tr>
-    <tr>
-    <td>Hi-C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0300">[6]</a></td>
-    <td>all-vs-all</td>
-    <td>0.1–1 Mb</td>
-    <td><ul><li>Genome-wide nucleosome core positioning</li><li>Relative low resolution</li><li>High cost</li></ul></td>
-    </tr>
-    <tr>
-    <td>ChIA-PET <a href="http://refhub.elsevier.com/S0168-9525(15)00063-3/sbref1405">[7]</a></td>
-    <td>Interaction of whole genome mediated by protein</td>
-    <td>Depends on read depth and the size of the genome region bound by the protein of interest</td>
-    <td><ul><li>Lower noise with ChIP</li><li>Biased method since selected protein</li></ul></td>
-    </tr>
- </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Referrence
-[1] Schmitt, Anthony D., Ming Hu, and Bing Ren. "Genome-wide mapping and analysis of chromosome architecture." Nature reviews Molecular cell biology 17.12 (2016): 743.<br>
-
-[2] Risca, Viviana I., and William J. Greenleaf. "Unraveling the 3D genome: genomics tools for multiscale exploration." Trends in Genetics 31.7 (2015): 357-372.<br>
-
-[3] Dekker J, Rippe K, Dekker M, Kleckner N. Capturing chromosome conformation. Science 2002;295(5558):1306–11.<br>
-
-[4] Simonis M, Klous P, Homminga I, Galjaard RJ, Rijkers EJ, Grosveld F, et al. High-res- olution identification of balanced and complex chromosomal rearrangements by 4C technology. Nature Methods 2009;6(11):837–42.<br>
-
-[5] Dostie J, Richmond TA, Arnaout RA, Selzer RR, Lee WL, Honan TA, et al. Chromo- some Conformation Capture Carbon Copy (5C): a massively parallel solution for mapping interactions between genomic elements. Genome Res 2006;16(10): 1299–309.<br>
-
-[6] Lieberman-Aiden E, van Berkum NL, Williams L, Imakaev M, Ragoczy T, Telling A, et al. Comprehensive mapping of long-range interactions reveals folding principles of the human genome. Science 2009;326(5950):289–93.<br>
-
-[7] Fullwood, M.J. et al. (2009) An oestrogen-receptor-alpha-bound human chromatin interactome. Nature 462, 58–64.<br>
-
-[8] https://github.com/hms-dbmi/hic-data-analysis-bootcamp/blob/master/HiC-Protocol.pptx.
-
-
+Once the true DIs have been inferred, TAD boundaries can be called at loci where the value of the true DI shifts from negative to positive.
