@@ -27,7 +27,7 @@
 #### 1.3.2.1. Intuition<a name="1321"></a>
 #### 1.3.2.2. Algorithm<a name="1322"></a>
     
-&nbsp;1. [Introduction](#11)
+&nbsp;1. [Introduction](#11)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2. Belgian Shepherd  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.1. Malinois  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.2. Groenendael  
