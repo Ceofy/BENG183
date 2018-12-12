@@ -14,6 +14,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.2 [Algorithm](#1322)  
 
 ## 1.1. Introduction<a name="11"></a>
+
+Hi-C is a chromosome conformation capture (3C) technique used to quantify interactions between different sections of the genome. Unlike older 3C techniques, Hi-C discovers all genomic interactions, as opposed to only interactions between one locus and the rest of the genome, for example.
+
+One application of the Hi-C technique is to identify Topologically Associated Domains (TADs) within the chromosome. TADs are regions of the chromosome that interact with themselves more frequently than they interact with other regions of the chromosome. They are a general property of genomes, and contribute to proper gene regulation and other nuclear functions. TADs typically consist of 105 to 106 contiguous base pairs, and are separated from each other by boundaries which prevent interaction between TADs. Since Hi-C quantifies chromosome interactions, it is a very useful tool for identifying these highly self-interacting regions.
+
 ## 1.2. Protocol<a name="12"></a>
 ### 1.2.1. Cross-linking<a name="121"></a>
 ### 1.2.2. Digestion<a name="122"></a>
