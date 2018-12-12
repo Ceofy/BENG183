@@ -18,7 +18,14 @@
 ### 1.2.1. Cross-linking<a name="121"></a>
 ### 1.2.2. Digestion<a name="122"></a>
 ### 1.2.3. Selection<a name="123"></a>
-### 
+### 1.2.4. Sequencing<a name="124"></a>
+## 1.3. Analysis<a name="13"></a>
+### 1.3.1. Contact matrix<a name="131"></a>
+#### 1.3.1.1. Concept<a name="1311"></a>
+#### 1.3.1.2. Creation<a name="1312"></a>
+### 1.3.2. TAD Calling<a name="132"></a>
+#### 1.3.2.1. Intuition<a name="1321"></a>
+#### 1.3.2.2. Algorithm<a name="1322"></a>
     
 
 
