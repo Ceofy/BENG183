@@ -23,7 +23,7 @@ One application of the Hi-C technique is to identify Topologically Associated Do
 ## 1.2 Protocol<a name="12"></a>
 
 ![hiCProtocol](/hiCProtocol.png)
-##### Figure 1: An overview of the Hi-C protocol. DNA fragments are shown in dark blue and orange, DNA-binding proteins are shown in light blue and cyan, biotin is shown in purple, and streptavidin beads are shown in gray.
+###### Figure 1: An overview of the Hi-C protocol. DNA fragments are shown in dark blue and orange, DNA-binding proteins are shown in light blue and cyan, biotin is shown in purple, and streptavidin beads are shown in gray.
 
 ### 1.2.1 Cross-linking<a name="121"></a>
 
