@@ -45,7 +45,7 @@ After the DNA is purified, it must be sequenced and analyzed in order to identif
 
 ### 1.3.1 Contact matrix<a name="131"></a> 
 
-![contactMatrix](/contactMatrixChromosome.jpeg)
+![contactMatrix](/contactMatrix.png)
 ###### Figure 2: A contact matrix visualizing chromatin interactions between loci of chromosome 14. Based on this figure, most loci interact most strongly with nearby loci.
 
 #### 1.3.1.1 Concept<a name="1311"></a>
