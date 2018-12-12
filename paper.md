@@ -7,7 +7,7 @@
     2.4. [Sequencing](#123)<br>
 3. [Analysis](#13)<br>
     3.1. [Contact matrix](#131)
-        3.1.1. [Concept](#1311)<br>
+      .  3.1.1. [Concept](#1311)<br>
         3.1.2. [Creation](#1312)<br>
     3.2. [TAD Calling](#132)<br>
         3.2.1 [Intuition](#1321)<br>
