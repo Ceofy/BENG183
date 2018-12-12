@@ -1,17 +1,17 @@
-# 1 Hi-C
-1. [Introduction](#11)<br>
-2. [Protocol](#12)<br>
-    2.1. [Cross-linking](#121)<br>
-    2.2. [Digestion](#122)<br>
-    2.3. [Selection](#123)<br>
-    2.4. [Sequencing](#123)<br>
-3. [Analysis](#13)<br>
-    3.1. [Contact matrix](#131)<br>
-        3.1.1. [Concept](#1311)<br>
-        3.1.2. [Creation](#1312)<br>
-    3.2. [TAD Calling](#132)<br>
-        3.2.1 [Intuition](#1321)<br>
-        3.2.2 [Algorithm](#1322)
+# 1. Hi-C
+1.1. [Introduction](#11)<br>
+1.2. [Protocol](#12)<br>
+    1.2.1. [Cross-linking](#121)<br>
+    1.2.2. [Digestion](#122)<br>
+    1.2.3. [Selection](#123)<br>
+    1.2.4. [Sequencing](#123)<br>
+1.3. [Analysis](#13)<br>
+    1.3.1. [Contact matrix](#131)<br>
+        1.3.1.1. [Concept](#1311)<br>
+        1.3.1.2. [Creation](#1312)<br>
+    1.3.2. [TAD Calling](#132)<br>
+        1.3.2.1 [Intuition](#1321)<br>
+        1.3.2.2 [Algorithm](#1322)
 
 ## 1.1. Introduction<a name="11"></a>
 ## 1.2. Protocol<a name="12"></a>
