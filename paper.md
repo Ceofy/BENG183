@@ -47,7 +47,8 @@ After the DNA is purified, it must be sequenced and analyzed in order to identif
 
 #### 1.3.1.1 Concept<a name="1311"></a>
 
-![contactMatrix](/contactMatrix.jpeg)
+![contactMatrix](/contactMatrixChromosome.jpeg)
+###### Figure 2: A contact matrix visualizing chromatin interactions between loci of chromosome 14. Based on this figure, most loci interact most strongly with nearby loci.
 
 A contact matrix is a heat map used to visualize interactions between different sections of the chromosome (or between different sections of the whole genome). The x- and y-axes represent loci on the chromosome in linear order. A dark colored square in the contact matrix represents a pair of loci which have many interactions between them, and a light colored square represents a pair of loci which have few interactions between them.
 
@@ -64,9 +65,14 @@ Using the contact matrix, the boundaries between TADs can be identified (ie. the
 
 The number of upstream or downstream contacts a bin has can be quantified using the Directionality Index (DI). The DI is calculated as follows:
 
+![directionalityIndex](/directionalityIndex.png)
+###### Figure 3: Equation for the directionality index. A represents the number of upstream contacts within a certain range. B represents the number of downstream contacts within a certain range. E represents the average of A and B.
+
 In the above equation, note that the second factor the the DI can never be negative, so the sign of the DI depends on the first factor. If the bin has more upstream contacts than downstream contacts (ie. A > B), then the DI will be positive. If the bin has more downstream contacts than upstream contacts, then the DI will be negative.
 
 #### 1.3.2.2 Algorithm<a name="1322"></a>
+
+![hiddenMarkovModel](/hiddenMarkovModel.png)
     
 In order to model the TAD calling problem, a hidden Markov model is used. A hidden Markov model is a consists hidden states which transition into other hidden states, and which give rise to observable outputs. The probability of a hidden state transitioning into another hidden state is known as the transition probability. The probability of a hidden state producing a certain observable output is known as the emission probability.
 
