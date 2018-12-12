@@ -2,11 +2,11 @@
 1. [Introduction](#11)
 2. [Protocol](#12)<br>
     2.1. [Cross-linking](#121)<br>
-    2.2. [Digestion](#122)
-    2.3. [Selection](#123)
-    2.4. [Sequencing](#123)
+    2.2. [Digestion](#122)<br>
+    2.3. [Selection](#123)<br>
+    2.4. [Sequencing](#123)<br>
 3. [Analysis](#13)
-    3.1. [Contact matrix](#131)
+    3.1. [Contact matrix](#131)<br>
         3.1.1. [Concept](#1311)
         3.1.2. [Creation](#1312)
     3.2. [TAD Calling](#132)
