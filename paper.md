@@ -45,10 +45,10 @@ After the DNA is purified, it must be sequenced and analyzed in order to identif
 
 ### 1.3.1 Contact matrix<a name="131"></a> 
 
-#### 1.3.1.1 Concept<a name="1311"></a>
-
 ![contactMatrix](/contactMatrixChromosome.jpeg)
 ###### Figure 2: A contact matrix visualizing chromatin interactions between loci of chromosome 14. Based on this figure, most loci interact most strongly with nearby loci.
+
+#### 1.3.1.1 Concept<a name="1311"></a>
 
 A contact matrix is a heat map used to visualize interactions between different sections of the chromosome (or between different sections of the whole genome). The x- and y-axes represent loci on the chromosome in linear order. A dark colored square in the contact matrix represents a pair of loci which have many interactions between them, and a light colored square represents a pair of loci which have few interactions between them.
 
