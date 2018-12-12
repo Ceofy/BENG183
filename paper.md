@@ -1,13 +1,25 @@
-# 2.3 C-Techs (chromosome conformation capture)-coupled 
-1. [Introduction](#231)
-2. [Overivew of 3C methods](#232)<br>
-    2.1. [Specificity](#2321)<br>
-    2.2. [Through-put and resolution](#2322)
-3. [Hi-C](#233)
-4. [ChIA-PET](#234)
-5. [Selected methods comparison](#235)
+# 1 Hi-C
+1. [Introduction](#11)
+2. [Protocol](#12)<br>
+    2.1. [Cross-linking](#121)<br>
+    2.2. [Digestion](#122)
+    2.3. [Selection](#123)
+    2.4. [Sequencing](#123)
+3. [Analysis](#13)
+    3.1. [Contact matrix](#131)
+        3.1.1. [Concept](#1311)
+        3.1.2. [Creation](#1312)
+    3.2. [TAD Calling](#132)
+        3.2.1 [Intuition](#1321)
+        3.2.2 [Algorithm](#1322)
 
-
+## 1.1. Introduction<a name="11"></a>
+## 1.2. Protocol<a name="12"></a>
+### 1.2.1. Cross-linking<a name="121"></a>
+### 1.2.2. Digestion<a name="122"></a>
+### 1.2.3. Selection<a name="123"></a>
+### 
+    
 
 
 ## 2.3.1 Introduction<a name="231"></a>
