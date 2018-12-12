@@ -73,6 +73,7 @@ In the above equation, note that the second factor the the DI can never be negat
 #### 1.3.2.2 Algorithm<a name="1322"></a>
 
 ![hiddenMarkovModel](/hiddenMarkovModel.png)
+###### Figure 4: Representation of a hidden Markov model. The light gray circles represent hidden states, and the horizontal arrows represent transition probabilities. The dark gray circles represent observable outputs, and the vertical arrows represent emission probabilities.
     
 In order to model the TAD calling problem, a hidden Markov model is used. A hidden Markov model is a consists hidden states which transition into other hidden states, and which give rise to observable outputs. The probability of a hidden state transitioning into another hidden state is known as the transition probability. The probability of a hidden state producing a certain observable output is known as the emission probability.
 
