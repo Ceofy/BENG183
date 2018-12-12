@@ -21,7 +21,7 @@ One application of the Hi-C technique is to identify Topologically Associated Do
 
 ## 1.2 Protocol<a name="12"></a>
 
-
+![hiCProtocol](/hiCProtocol.png)
 
 ### 1.2.1 Cross-linking<a name="121"></a>
 
