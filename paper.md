@@ -12,6 +12,20 @@
     3.2. [TAD Calling](#132)<br>
         3.2.1 [Intuition](#1321)<br>
         3.2.2 [Algorithm](#1322)
+        
+&nbsp;1. [Introduction](#11)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. [Protocol](#12)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1. [Cross-linking](#121)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2. [Digestion](#122)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3. [Selection](#123)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.4. [Sequencing](#123)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Analysis](#13)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1. [Contact matrix](#131)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Concept](#1311)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Creation](#1312)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2. [TAD Calling](#132)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.1 [Intuition](#1321)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.2 [Algorithm](#1322)  
 
 ## 1.1. Introduction<a name="11"></a>
 ## 1.2. Protocol<a name="12"></a>
@@ -27,14 +41,7 @@
 #### 1.3.2.1. Intuition<a name="1321"></a>
 #### 1.3.2.2. Algorithm<a name="1322"></a>
     
-&nbsp;1. [Introduction](#11)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2. Belgian Shepherd  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.1. Malinois  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.2. Groenendael  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.3. Tervuren  
-&nbsp;2. Cat  
-&nbsp;&nbsp;&nbsp;2.1. Siberian  
-&nbsp;&nbsp;&nbsp;2.2. Siamese
+
 
 ## 2.3.1 Introduction<a name="231"></a>
 
